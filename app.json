@@ -2,6 +2,6 @@
   "name": "Prometheus Tesla Exporter",
   "description": "A simple Prometheus exporter for your Tesla vehicles.",
   "repository": "https://github.com/dewski/tesla_exporter",
-  "logo": "https://node-js-sample.herokuapp.com/node.png",
+  "logo": "https://rawgit.com/dewski/tesla_exporter/master/public/tesla.svg",
   "keywords": ["golang", "tesla", "prometheus"]
 }
