@@ -3,5 +3,11 @@
   "description": "A simple Prometheus exporter for your Tesla vehicles.",
   "repository": "https://github.com/dewski/tesla_exporter",
   "logo": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Tesla_Motors.svg",
-  "keywords": ["golang", "tesla", "prometheus"]
+  "keywords": ["golang", "tesla", "prometheus"],
+  "env": {
+    "TESLA_CLIENT_ID": "AVAILABLE_ON_INTERNET",
+    "TESLA_CLIENT_SECRET": "AVAILABLE_ON_INTERNET",
+    "TESLA_EMAIL": "your@tesla.email.com",
+    "TESLA_PASSWORD": "your_tesla_password_use_password_manager"
+  }
 }

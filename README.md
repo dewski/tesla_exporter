@@ -1,6 +1,6 @@
 # tesla_exporter
 
-<a href="https://heroku.com/deploy?template=https://github.com/dewski/tesla_exporter&env[TESLA_CLIENT_ID]=FINDME&env[TESLA_CLIENT_SECRET]=FINDME&env[TESLA_EMAIL]=account@email.com&env[TESLA_PASSWORD]=your_password_use_a_password_manager">
+<a href="https://heroku.com/deploy?template=https://github.com/dewski/tesla_exporter">
   <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
 </a>
 
