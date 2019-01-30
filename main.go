@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"net/http"
 	"os"
+	"time"
 
 	"github.com/prometheus/client_golang/prometheus"
 
@@ -21,6 +22,13 @@ type Fahrenheit float32
 // ToFahrenheit converts Celsius temperate to equivelent Fahrenheit
 func (t Celsius) ToFahrenheit() Fahrenheit {
 	return Fahrenheit(t*9/5 + 32)
+}
+
+func recordMetrics(d time.Duration) {
+	for {
+		processVehicles()
+		time.Sleep(d)
+	}
 }
 
 func buildClient() (*tesla.Client, error) {
@@ -260,7 +268,7 @@ func gaugeChargeState(v *tesla.Vehicle) error {
 	return nil
 }
 
-func main() {
+func processVehicles() {
 	client, err := buildClient()
 	if err != nil {
 		panic(err)
@@ -283,6 +291,18 @@ func main() {
 		_ = gaugeClimate(vehicle.Vehicle)
 		_ = gaugeChargeState(vehicle.Vehicle)
 	}
+}
+
+func main() {
+	duration := os.Getenv("POLL_DURATION")
+	if duration == "" {
+		duration = "30m"
+	}
+	d, err := time.ParseDuration(duration)
+	if err != nil {
+		panic(err)
+	}
+	go recordMetrics(d)
 
 	port := os.Getenv("PORT")
 	if port == "" {

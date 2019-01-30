@@ -8,6 +8,7 @@
     "TESLA_CLIENT_ID": "AVAILABLE_ON_INTERNET",
     "TESLA_CLIENT_SECRET": "AVAILABLE_ON_INTERNET",
     "TESLA_EMAIL": "your@tesla.email.com",
-    "TESLA_PASSWORD": "your_tesla_password_use_password_manager"
+    "TESLA_PASSWORD": "your_tesla_password_use_password_manager",
+    "POLL_DURATION": "30m"
   }
 }
