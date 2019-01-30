@@ -2,6 +2,7 @@ package main
 
 import (
 	"errors"
+	"fmt"
 	"net/http"
 	"os"
 
@@ -283,6 +284,11 @@ func main() {
 		_ = gaugeChargeState(vehicle.Vehicle)
 	}
 
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8752" // TSLA
+	}
+
 	http.Handle("/metrics", promhttp.Handler())
-	http.ListenAndServe(":2112", nil)
+	http.ListenAndServe(fmt.Sprintf(":%s", port), nil)
 }
